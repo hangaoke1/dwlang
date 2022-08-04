@@ -1,0 +1,9 @@
+.monaco-error-line:before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-image: url('https://survey-hz-user.nos-eastchina1.126.net/f08646df-25f9-4959-a2e2-457c997a1d33.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

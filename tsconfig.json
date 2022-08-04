@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": false,
+        "declaration": true,
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "target": "es5",
+        "lib": [
+            "ESNext",
+            "DOM",
+            "ES2015",
+            "ES2016",
+            "DOM.Iterable"
+        ],
+        "noImplicitAny": false,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "baseUrl": "./",
+        "downlevelIteration": true,
+        "skipLibCheck": true,
+        "jsx": "react"
+    },
+    "include": [
+        "src/**/*",
+        "types/**/*"
+    ]
+}
