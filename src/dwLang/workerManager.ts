@@ -1,6 +1,6 @@
-import { Uri, editor } from 'monaco-editor'
-import { DwLangWorker } from './dwLangWorker';
-import { languageID } from './config';
+import { Uri, editor } from "monaco-editor";
+import { DwLangWorker } from "./dwLangWorker";
+import { languageID } from "./config";
 
 export class WorkerManager {
   private worker: editor.MonacoWebWorker<DwLangWorker>;

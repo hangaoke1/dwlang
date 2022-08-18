@@ -30,6 +30,7 @@ export class DwLangWorker {
     wordInfo: editor.IWordAtPosition,
   ): Promise<languages.CompletionList> {
     const document = this.getTextDocument(uri);
+    console.log(uri, position, wordInfo)
     return Promise.resolve(this.completion.doComplete(document, position, wordInfo));
   }
 
