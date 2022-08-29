@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "dwLang editor",
   "scripts": {
-    "start": "webpack server --hot"
+    "start": "webpack server --hot",
+    "build": "webpack"
   },
   "author": "Open",
   "license": "ISC",

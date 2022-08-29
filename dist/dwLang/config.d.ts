@@ -1,0 +1,10 @@
+import * as monaco from "monaco-editor";
+declare type IRichLanguageConfiguration = monaco.languages.LanguageConfiguration;
+declare type ILanguage = monaco.languages.IMonarchLanguage;
+declare type IStandaloneThemeData = monaco.editor.IStandaloneThemeData;
+export declare const languageID = "dwLang";
+export declare const languageExtensionPoint: monaco.languages.ILanguageExtensionPoint;
+export declare const richLanguageConfiguration: IRichLanguageConfiguration;
+export declare const monarchLanguage: ILanguage;
+export declare const themeData: IStandaloneThemeData;
+export {};
