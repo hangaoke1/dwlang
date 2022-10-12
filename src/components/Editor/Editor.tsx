@@ -2,6 +2,7 @@ import * as React from "react";
 import { editor, IDisposable } from "monaco-editor";
 import { languageID } from "../../dwLang/config";
 import { setupLanguage } from "../../dwLang/setup";
+import surveyData from '../../dwLang/surveyMock'
 
 import "./index.css";
 
@@ -13,9 +14,7 @@ const Editor: React.FC<IEditorProps> = () => {
   const languageInsRef = React.useRef<IDisposable>(null);
 
   React.useEffect(() => {
-    languageInsRef.current = setupLanguage({
-      name: 'hello world'
-    });
+    languageInsRef.current = setupLanguage(surveyData);
 
     const editorNode = editorNodeRef.current;
     if (editorNode) {

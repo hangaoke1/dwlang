@@ -15,8 +15,8 @@ export class DwLangWorker {
     this._ctx = ctx;
 
     this.validation = new Validation();
-    this.completion = new Completion();
-    this.hover = new Hover();
+    this.completion = new Completion(createData.surveyData);
+    this.hover = new Hover(createData.surveyData);
   }
 
   doValidation(uri: string): Promise<editor.IMarkerData[]> {
