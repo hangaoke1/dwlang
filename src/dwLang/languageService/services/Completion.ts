@@ -10,7 +10,7 @@ export class Completion {
     this.surveyData = surveyData;
   }
   private getKeywordCompletionItems(): languages.CompletionItem[] {
-    const keywords = ["if", "then", "show", "hide"];
+    const keywords = ["if", "then", "show", "hide", "select"];
     return keywords.map((keyword) => {
       return {
         label: keyword,
@@ -45,7 +45,6 @@ export class Completion {
     const { qNumber, end} = getRangeInfo(word)
 
     const lastSymbol = word.lastIndexOf("~");
-    // Q1~
     // prefix: Q1~
     const prefix = word.slice(0, lastSymbol + 1);
     const suggestions = [];
@@ -73,6 +72,32 @@ export class Completion {
     return suggestions;
   }
 
+  getModifierCompletionItems(word) {
+    let modifier = []
+    if (word.indexOf('select') > -1) {
+      modifier = ['sync', 'reverse']
+    }
+
+    const lastSymbol = word.lastIndexOf(".");
+    const prefix = word.slice(0, lastSymbol + 1);
+
+    const suggestions = modifier.map((m) => {
+      return {
+        label: m,
+        kind: monacoLanguagesCopy.CompletionItemKind.Keyword,
+        insertText: prefix + m,
+        sortText: m,
+        filterText: prefix + m,
+        insertTextRules:
+          monacoLanguagesCopy.CompletionItemInsertTextRule.InsertAsSnippet,
+        range: null,
+      };
+    });
+    
+    return suggestions;
+
+  }
+
   public doComplete(
     document: TextDocument,
     position: Position,
@@ -83,6 +108,8 @@ export class Completion {
     let questions = [];
     if (word.indexOf("~") > -1) {
       questions = this.getRangeVariableCompletionItems(word);
+    } else if(word.indexOf("select.") > -1) {
+      questions = this.getModifierCompletionItems(word)
     } else {
       questions = this.getVariableCompletionItems();
     }

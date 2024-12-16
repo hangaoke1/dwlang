@@ -14,7 +14,7 @@ export const languageExtensionPoint: monaco.languages.ILanguageExtensionPoint =
 export const richLanguageConfiguration: IRichLanguageConfiguration = {
   // If we want to support code folding, brackets ... ( [], (), {}....), we can override some properties here
   wordPattern:
-    /(-?\d*\.\d\w*)|([^\`\!\@\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g,
+    /(-?\d*\.\d\w*)|([^\`\!\@\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\<\>\/\?\s]+)/g,
 };
 
 export const monarchLanguage: ILanguage = {
@@ -27,14 +27,15 @@ export const monarchLanguage: ILanguage = {
       [/#(.*)?/, "noUseSign"],
       [/\s*(Q[0-9]*(S[0-9]*)?(A[0-9]*)?(~[0-9]+)?)\s*/, "Question"],
       [/\s*(if|then)\s*/, "IfStatement"],
-      [/\s*(show|hide)\s*/, "action"],
+      [/\s*(show|hide|select)\s*/, "action"],
+      [/\s*(sync|reverse)\s*/, "modifier"],
       [/\s*(> |== |>= |<= |<)\s*/, "compareSign"],
       [/\s*(and|or|not|\(|\))\s*/, "linkSign"],
       [/\s*([0-9]\d*)\s*/, "Number"],
       [/\s*(,)\s*/, "Gap"],
     ],
   },
-  keywords: ["if", "then", "and", "or", "not", "show", "hide"],
+  keywords: ["if", "then", "and", "or", "not", "show", "hide", "select"],
   operators: [">", "==", ">=", "<=", "<", "and", "or", "not", "(", ")"],
   whitespace: [
     [/[ \t\r\n]+/, "white"],
@@ -55,6 +56,7 @@ export const themeData: IStandaloneThemeData = {
     { token: "linkSign", foreground: "#F3CD5E" },
     { token: "Number", foreground: "#FF9878" },
     { token: "Gap", foreground: "#F3CD5E" },
+    { token: "modifier", foreground: "#ec4899" },
     { token: "invalid", foreground: "#FFFFFF" },
   ],
   colors: {
