@@ -1,0 +1,39 @@
+{
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "parserOpts": {
+        "headerPattern": "^(?:\\\\[(\\\\w+-\\\\d+)\\\\] )?(\\\\w+)(?:\\\\((.*)\\\\))?: (.*)$",
+        "headerCorrespondence": [
+          "ticket",
+          "type",
+          "scope",
+          "subject"
+        ]
+      },
+      "infile": "CHANGELOG.md",
+      "header": "# 更新历史 \\n",
+      "writerOpts": {
+        "headerPartial": "## [{{version}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/compare/{{previousTag}}...{{currentTag}}) ({{date}}) \\n",
+        "commitPartial": "* {{subject}} \\n"
+      }
+    }
+  },
+  "silent": true,
+  "increment": true,
+  "disableVersionPrompt": true,
+  "npm": {
+    "publish": false
+  },
+  "git": {
+    "commitMessage": "docs: changelog for [ci skip]",
+    "requireCleanWorkingDir": false,
+    "tag": true,
+    "commit": true,
+    "push": false
+  },
+  "ci": true,
+  "gitlab": {
+    "release": false,
+    "autoGenerate": false
+  }
+}
