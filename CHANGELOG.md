@@ -1,6 +1,13 @@
 # 更新历史 
 
 
+## [1.0.4](https://github.com/hangaoke1/dwlang/compare/1.0.3...1.0.4) (2024-12-18) 
+
+* 依赖更新 
+* 依赖更新 
+* version 定义 
+* docs
+
 ## [1.0.3](https://github.com/hangaoke1/dwlang/compare/1.0.2...1.0.3) (2024-12-18) 
 
 * 功能2
