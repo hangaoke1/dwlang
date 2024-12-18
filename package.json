@@ -1,6 +1,6 @@
 {
   "name": "dwlangeditor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "dwLang editor",
   "scripts": {
     "dev": "webpack server --hot",
